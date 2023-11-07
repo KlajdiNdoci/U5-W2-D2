@@ -35,4 +35,8 @@ public class PostService {
             return found;
         }
     }
+
+    public void findByIdAndDelete(int id) {
+        this.posts.removeIf(current -> current.getId() == id);
+    }
 }

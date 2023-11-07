@@ -27,4 +27,10 @@ public class PostController {
     public Post findById(@PathVariable long id) {
         return postService.findById(id);
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void findByIdAndDelete(@PathVariable int id) {
+        postService.findByIdAndDelete(id);
+    }
 }
