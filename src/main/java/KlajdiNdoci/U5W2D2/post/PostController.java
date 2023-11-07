@@ -33,4 +33,9 @@ public class PostController {
     public void findByIdAndDelete(@PathVariable int id) {
         postService.findByIdAndDelete(id);
     }
+
+    @PutMapping("/{id}")
+    public Post findByIdAndUpdate(@PathVariable int id, @RequestBody Post body) {
+        return postService.findByIdAndUpdate(id, body);
+    }
 }

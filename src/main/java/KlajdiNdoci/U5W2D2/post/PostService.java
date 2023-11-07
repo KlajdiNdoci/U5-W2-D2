@@ -39,4 +39,26 @@ public class PostService {
     public void findByIdAndDelete(int id) {
         this.posts.removeIf(current -> current.getId() == id);
     }
+
+    public Post findByIdAndUpdate(int id, Post body) {
+        Post found = null;
+
+        for (Post user : this.posts) {
+            if (user.getId() == id) {
+                found = user;
+                found.setId(id);
+                found.setCover(body.getCover());
+                found.setCategoria(body.getCategoria());
+                found.setTitolo(body.getTitolo());
+                found.setTempoDiLettura(body.getTempoDiLettura());
+                found.setContenuto(body.getContenuto());
+            }
+        }
+        if (found == null) {
+            throw new NotFoundException(id);
+        } else {
+            return found;
+        }
+    }
+
 }
