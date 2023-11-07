@@ -22,4 +22,9 @@ public class PostController {
     public Post savePost(@RequestBody Post body) {
         return postService.save(body);
     }
+
+    @GetMapping("/{id}")
+    public Post findById(@PathVariable long id) {
+        return postService.findById(id);
+    }
 }
