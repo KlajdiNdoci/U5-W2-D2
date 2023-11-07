@@ -16,4 +16,12 @@ public class Utente {
     private String email;
     private LocalDate dataDiNascita;
     private String avatar;
+
+    public Utente() {
+        updateAvatar();
+    }
+
+    private void updateAvatar() {
+        this.avatar = "https://ui-avatars.com/api/?name=" + this.nome + "+" + this.cognome;
+    }
 }
